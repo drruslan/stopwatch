@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Title </title>
+</head>
+<body>
+<center>
+    <h1 id="score"> 0 </h1>
+</center>
+<div style="display: flex; align-items: center; justify-content:center; flex-direction: row">
+<img src="play.jpg" onclick="play()" width="100">
+    <img src="pause.png" onclick="pause()" width="100" >
+    <img src="stop.png" onclick="stop()" width="100">
+</div>
+</body>
+<script>
+i=0
+    timer1=undefined
+    function play() {
+        clearInterval(timer1)
+        timer1=setInterval(function () {
+            i=i+1
+            document.getElementById('score').innerHTML=i
+        },1000)
+    }
+
+    function pause() {
+    clearInterval(timer1)
+
+    }
+    function stop() {
+      clearInterval(timer1)
+        i=0
+        document.getElementById('score').innerHTML=i
+    }
+</script>
+</html>
